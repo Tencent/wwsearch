@@ -1,0 +1,50 @@
+package lsmsearch;
+
+// stored field  
+message StoreIndexField{
+  required uint32 field_id = 1;
+  required uint32 field_flag = 2;
+  required uint32 field_type = 3;
+
+  optional uint64 numeric_value = 4;
+  optional bytes string_value = 5;
+  repeated bytes terms = 6;
+  optional uint32 suffix_len = 10;
+}
+
+message StoreDocument{
+	required uint64 document_id = 1;
+	repeated StoreIndexField fields = 2;
+}	
+
+// dov value
+message StoreDocValue{
+	repeated StoreIndexField fields = 1;
+}
+
+// table meta
+message StoreMeta{
+  optional uint64 total_documents = 1;
+  optional uint64 delete_documents = 2;
+  optional uint64 increase_seq = 3;
+  optional uint64 terms_count = 4;
+}
+
+message MockData {
+  enum Type {
+    kUnknown = 0;
+    kUpdate = 1;
+    kMerge = 2;
+    kDelete = 3;
+    kDeleteRange = 4;
+  }
+  required uint32 column_type = 1;
+  required bytes key = 2;
+  required bytes value = 3;
+  required Type type = 4;
+  optional bytes end_key = 5;     // only work for delete range
+}
+
+message MockDataList {
+  repeated MockData mock_data_list = 1;
+}
