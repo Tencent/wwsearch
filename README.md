@@ -128,11 +128,6 @@ cp ../deps/tokenizer/etc/wwsearch_* .
 ## 反馈问题
 使用中遇到问题，可以有以下途径反馈：
 1. 直接在[issues]提问；
-2. 通过邮箱联系我们（xibaocao@tencent.com/datonli@tencent.com）；
-3. 通过加入微信群联系我们，wwsearch交流讨论群请扫描一下二维码：
-
-     ![wwsearch_user_help_group](wwsearch_user_help_group.png)
-     
 
 ## 开源协议
 
